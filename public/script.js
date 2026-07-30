@@ -6,6 +6,7 @@
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 const copyBtn = document.getElementById('copyBtn');
+const goBtn = document.getElementById('goBtn');
 const sshxUrlInput = document.getElementById('sshxUrl');
 const linkContainer = document.getElementById('linkContainer');
 const loadingIndicator = document.getElementById('loadingIndicator');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startBtn.addEventListener('click', startSshx);
     stopBtn.addEventListener('click', stopSshx);
     copyBtn.addEventListener('click', copyLink);
+    goBtn.addEventListener('click', goToLink);
 });
 
 // 检查 SSHX 状态
@@ -97,6 +99,14 @@ async function stopSshx() {
         showCopyMessage('网络错误，请重试', 'error');
     } finally {
         setLoading(false);
+    }
+}
+
+// 直达链接
+function goToLink() {
+    const url = sshxUrlInput.value;
+    if (url) {
+        window.open(url, '_blank');
     }
 }
 

@@ -534,6 +534,18 @@ body {
     background: rgba(0, 212, 255, 0.25);
 }
 
+.btn-go {
+    background: rgba(0, 230, 118, 0.15);
+    color: var(--success);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    padding: 14px 24px;
+    min-width: 100px;
+}
+
+.btn-go:hover {
+    background: rgba(0, 230, 118, 0.25);
+}
+
 .copy-message {
     margin-top: 8px;
     font-size: 0.85rem;
