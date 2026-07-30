@@ -46,7 +46,21 @@ hanhai-future-landing/
 
 ## 快速开始
 
-### 前置要求
+### 一键安装（推荐）
+
+```bash
+curl -sSL https://raw.githubusercontent.com/VastFuture/hanhai-future-landing/main/install.sh | bash
+```
+
+安装脚本会自动：
+1. 检测并安装 Node.js、Python、SSHX、Git 等依赖
+2. 克隆项目代码
+3. 安装项目依赖
+4. 询问是否启动服务
+
+### 手动安装
+
+#### 前置要求
 
 - Node.js 16+
 - SSHX 已安装（路径：`/root/sshx`）
