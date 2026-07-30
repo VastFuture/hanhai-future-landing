@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀚海未来 | Hanhai Future</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 背景粒子画布 -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🌊</span>
+                <span class="logo-text">瀚海未来</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">探索</a>
+                <a href="#sshx">控制台</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">SSHX 智能终端 · 瀚海未来</div>
+            <h1 class="hero-title">
+                穿越数字海洋<br>
+                <span class="gradient-text">抵达未来之境</span>
+            </h1>
+            <p class="hero-subtitle">
+                在瀚海的无垠边界，我们以科技为舟，以数据为帆，驶向未知的数字新大陆
+            </p>
+            <div class="hero-buttons">
+                <a href="#sshx" class="btn btn-primary">启动终端</a>
+                <a href="#features" class="btn btn-secondary">了解更多</a>
+            </div>
+        </div>
+
+        <!-- 装饰元素 -->
+        <div class="ocean-wave wave-1"></div>
+        <div class="ocean-wave wave-2"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+    </section>
+
+    <!-- 特色功能 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">核心能力</span>
+                <h2>瀚海未来的三大支柱</h2>
+                <p>融合前沿科技与深海美学，构建下一代数字基础设施</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>量子洞察</h3>
+                    <p>以量子计算思维重新定义数据处理，在瀚海深处捕捉每一个细微的信号</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>深海防护</h3>
+                    <p>多层安全架构如同深海屏障，守护数据资产在数字海洋中安然无恙</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>光速连接</h3>
+                    <p>全球分布式节点网络，让每一次交互都如深海光缆般迅捷可靠</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SSHX 控制台 -->
+    <section id="sshx" class="sshx-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">SSHX 控制台</span>
+                <h2>远程终端接入</h2>
+                <p>一键开启或关闭 Web SSH 终端，随时随地掌控你的数字空间</p>
+            </div>
+
+            <div class="sshx-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>🖥️ SSHX Web Terminal</h3>
+                        <p>通过浏览器远程访问你的终端环境</p>
+                    </div>
+                    <div id="statusBadge" class="status-badge offline">
+                        <span class="status-dot"></span>
+                        <span id="statusText">未运行</span>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="control-row">
+                        <button id="startBtn" class="btn btn-sshx-start">
+                            <span class="btn-icon">▶</span>
+                            开启 SSHX
+                        </button>
+                        <button id="stopBtn" class="btn btn-sshx-stop" disabled>
+                            <span class="btn-icon">⏹</span>
+                            关闭 SSHX
+                        </button>
+                    </div>
+
+                    <div id="linkContainer" class="link-container hidden">
+                        <label>访问链接</label>
+                        <div class="link-row">
+                            <input type="text" id="sshxUrl" readonly placeholder="等待生成链接...">
+                            <button id="copyBtn" class="btn btn-copy">复制</button>
+                        </div>
+                        <div id="copyMessage" class="copy-message"></div>
+                    </div>
+
+                    <div id="loadingIndicator" class="loading-indicator hidden">
+                        <div class="spinner"></div>
+                        <span>正在建立深海连接...</span>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <div class="info-item">
+                        <strong>安全提示</strong>
+                        <span>链接无需密码，请妥善保管</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>刷新机制</strong>
+                        <span>每次启动生成新链接</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>版本</strong>
+                        <span>sshx v0.4.1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">服务可用性</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&lt;50ms</div>
+                <div class="stat-label">响应延迟</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">全天候监控</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">探索可能</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section id="contact" class="contact">
+        <div class="container contact-content">
+            <h2>准备好启航了吗？</h2>
+            <p>加入瀚海未来，与我们一起探索数字海洋的无限可能</p>
+            <div class="contact-links">
+                <a href="#" class="contact-link">GitHub</a>
+                <a href="#" class="contact-link">文档</a>
+                <a href="#" class="contact-link">社区</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 瀚海未来 Hanhai Future · Powered by SSHX</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
